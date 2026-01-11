@@ -4,29 +4,41 @@
 <title>Credit Risk Decision Engine</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  html { scroll-behavior: smooth; }
+  .gradient-bg { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); }
+</style>
 </head>
 
 <body class="bg-slate-100 pt-24">
 
 <!-- ================= NAVBAR ================= -->
-<nav class="bg-white shadow-sm fixed top-0 w-full z-50">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-    <h1 class="text-xl font-bold text-blue-700">Credit Risk Engine</h1>
+<nav class="bg-white shadow-md fixed top-0 w-full z-50">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
+    <h1 class="text-lg sm:text-xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
+      <i class="fas fa-chart-line mr-2"></i>Credit Risk Engine
+    </h1>
 
-    <div class="space-x-6 text-sm font-medium text-gray-700">
-      <a href="#tool" class="hover:text-blue-600">Risk Tool</a>
-      <a href="#about" class="hover:text-blue-600">Model</a>
-      <a href="#metrics" class="hover:text-blue-600">Performance</a>
-      <a href="#contact" class="hover:text-blue-600">Contact</a>
+    <div class="hidden sm:flex space-x-4 text-sm font-medium text-gray-700">
+      <a href="#tool" class="hover:text-blue-600 transition">Risk Tool</a>
+      <a href="#about" class="hover:text-blue-600 transition">Model</a>
+      <a href="#metrics" class="hover:text-blue-600 transition">Performance</a>
+      <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
+    </div>
+
+    <div class="sm:hidden">
+      <button class="text-gray-700 hover:text-blue-600">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
     </div>
   </div>
 </nav>
 
 <!-- ================= HERO ================= -->
-<header class="bg-white shadow-sm py-8">
-  <div class="max-w-7xl mx-auto px-6">
-    <h1 class="text-3xl font-bold text-blue-700">Credit Risk Decision Engine</h1>
-    <p class="text-gray-600 mt-2">
+<header class="gradient-bg text-white py-12 sm:py-16">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <h1 class="text-3xl sm:text-4xl font-bold mb-2">Credit Risk Decision Engine</h1>
+    <p class="text-blue-100 text-sm sm:text-base max-w-2xl">
       AI-powered loan default prediction system built using XGBoost
     </p>
   </div>
@@ -39,7 +51,8 @@
 <!-- LEFT -->
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-<div class="bg-white p-6 rounded-xl shadow">
+
+<div class="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md transition border-l-4 border-blue-600">
   <h2 class="text-lg font-bold text-blue-700 mb-2">What this system does</h2>
   <p class="text-gray-700">
     This platform predicts the <b>Probability of Default (PD)</b> for loan applicants using
@@ -47,7 +60,8 @@
   </p>
 </div>
 
-<div class="bg-white p-6 rounded-xl shadow">
+
+<div class="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md transition border-l-4 border-blue-600">
   <h2 class="text-lg font-bold text-blue-700 mb-2">Risk Interpretation</h2>
   <ul class="text-gray-700 text-sm list-disc list-inside space-y-1">
     <li><b>Low Risk</b> → Automatic Approval</li>
@@ -56,15 +70,19 @@
   </ul>
 </div>
 
-<div class="bg-white p-6 rounded-xl shadow">
-  <h2 class="text-lg font-bold text-blue-700 mb-2">Why this model is strong</h2>
-  <ul class="text-gray-700 text-sm list-disc list-inside space-y-1">
+<div class="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md transition border-l-4 border-blue-600 md:col-span-2">
+  <h2 class="text-base sm:text-lg font-bold text-blue-600 mb-2">
+    Why this model is strong
+  </h2>
+
+  <ul class="list-disc list-inside text-gray-700 text-sm space-y-1">
     <li>Built using XGBoost (industry-standard credit ML)</li>
     <li>Optimized for highly imbalanced default data</li>
     <li>Evaluated using ROC-AUC, PR-AUC and KS</li>
     <li>Designed for real bank underwriting flows</li>
   </ul>
 </div>
+
 
 </div>
 
@@ -108,8 +126,8 @@
     </select>
   </div>
 
-  <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded font-semibold">
-    Evaluate Risk
+  <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg font-semibold text-sm transition">
+    <i class="fas fa-calculator mr-2"></i>Evaluate Risk
   </button>
 
 </form>
@@ -206,44 +224,43 @@
 
 <!-- ================= PERFORMANCE ================= -->
 <a id="metrics"></a>
-<section class="bg-slate-50 py-16">
-  <div class="max-w-7xl mx-auto px-6 text-center">
+<section class="bg-gradient-to-br from-blue-50 to-indigo-50 py-8 sm:py-12">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
 
-    <h2 class="text-3xl font-bold text-blue-700 mb-4">
+    <h2 class="text-2xl sm:text-3xl font-bold text-blue-700 mb-2">
       Model Performance
     </h2>
 
-    <p class="text-gray-600 max-w-3xl mx-auto mb-10">
-      The XGBoost credit model was evaluated on unseen customers using
-      industry-standard credit-risk metrics to ensure real-world reliability.
+    <p class="text-gray-600 max-w-3xl mx-auto mb-8 text-sm sm:text-base">
+      The XGBoost credit model was evaluated on unseen customers using industry-standard credit-risk metrics.
     </p>
 
-    <div class="grid md:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 
-      <div class="bg-white p-8 rounded-xl shadow">
-        <p class="text-sm text-gray-500">ROC-AUC</p>
-        <p class="text-4xl font-bold text-blue-700">0.94</p>
-        <p class="text-sm text-gray-600 mt-3">
-          Measures how well the model separates defaulters from non-defaulters.
-          Values above 0.90 are considered excellent in credit scoring.
+      <div class="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md transition">
+        <div class="text-blue-600 text-2xl mb-2"><i class="fas fa-chart-bar"></i></div>
+        <p class="text-xs sm:text-sm text-gray-500 font-semibold">ROC-AUC</p>
+        <p class="text-3xl sm:text-4xl font-bold text-blue-700 my-2">0.94</p>
+        <p class="text-xs sm:text-sm text-gray-600">
+          Separates defaulters from non-defaulters effectively.
         </p>
       </div>
 
-      <div class="bg-white p-8 rounded-xl shadow">
-        <p class="text-sm text-gray-500">PR-AUC</p>
-        <p class="text-4xl font-bold text-green-600">0.83</p>
-        <p class="text-sm text-gray-600 mt-3">
-          Indicates how accurately high-risk borrowers are detected in highly imbalanced datasets
-          where defaults are rare.
+      <div class="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md transition">
+        <div class="text-green-600 text-2xl mb-2"><i class="fas fa-chart-line"></i></div>
+        <p class="text-xs sm:text-sm text-gray-500 font-semibold">PR-AUC</p>
+        <p class="text-3xl sm:text-4xl font-bold text-green-600 my-2">0.83</p>
+        <p class="text-xs sm:text-sm text-gray-600">
+          Accurately detects high-risk borrowers in imbalanced data.
         </p>
       </div>
 
-      <div class="bg-white p-8 rounded-xl shadow">
-        <p class="text-sm text-gray-500">KS Statistic</p>
-        <p class="text-4xl font-bold text-purple-600">0.81</p>
-        <p class="text-sm text-gray-600 mt-3">
-          A core banking risk metric. Scores above 0.60 are strong — this model achieves elite-level
-          separation power.
+      <div class="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md transition">
+        <div class="text-purple-600 text-2xl mb-2"><i class="fas fa-bolt"></i></div>
+        <p class="text-xs sm:text-sm text-gray-500 font-semibold">KS Statistic</p>
+        <p class="text-3xl sm:text-4xl font-bold text-purple-600 my-2">0.81</p>
+        <p class="text-xs sm:text-sm text-gray-600">
+          Elite-level separation power for banking applications.
         </p>
       </div>
 
@@ -255,33 +272,32 @@
 
 <!-- ================= CONTACT ================= -->
 <a id="contact"></a>
-<section class="bg-blue-700 py-16 text-white">
-  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+<section class="gradient-bg text-white py-8 sm:py-12">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
 
     <div>
-      <h2 class="text-3xl font-bold mb-4">About the Project</h2>
-      <p class="text-blue-100 mb-4">
-        This Credit Risk Decision Engine is a full-stack machine learning application that
-        combines data engineering, predictive modeling and automated underwriting into
-        a real-world fintech system.
+      <h2 class="text-2xl sm:text-3xl font-bold mb-3">About the Project</h2>
+      <p class="text-blue-100 mb-3 text-sm sm:text-base">
+        This Credit Risk Decision Engine is a full-stack ML application combining data engineering,
+        predictive modeling and automated underwriting into a real-world fintech system.
       </p>
-      <p class="text-blue-100">
+      <p class="text-blue-100 text-sm sm:text-base">
         It demonstrates how modern banks evaluate customer risk using AI instead of
         traditional rule-based credit scoring.
       </p>
     </div>
 
-    <div class="bg-white text-gray-800 p-8 rounded-xl shadow">
-      <h3 class="text-xl font-bold mb-4">Contact</h3>
+    <div class="bg-white text-gray-800 p-4 sm:p-6 rounded-lg shadow-lg">
+      <h3 class="text-lg sm:text-xl font-bold mb-3">Connect</h3>
 
-      <p class="mb-2"><b>Name:</b> Shaivi Srivastava</p>
-      <p class="mb-2"><b>Email:</b> shaivisri04@gmail.com</p>
+      <p class="mb-2 text-sm"><b>Name:</b> Shaivi Srivastava</p>
+      <p class="mb-3 text-sm"><b>Email:</b> shaivisri04@gmail.com</p>
 
-      <div class="flex space-x-6 mt-4 text-xl">
-        <a href="https://www.linkedin.com/in/shaivisri04/" target="_blank" class="text-blue-600">
+      <div class="flex space-x-4 text-xl">
+        <a href="https://www.linkedin.com/in/shaivisri04/" target="_blank" class="text-blue-600 hover:text-blue-800 transition">
           <i class="fab fa-linkedin"></i>
         </a>
-        <a href="https://github.com/ShaiviSri04" target="_blank" class="text-gray-800">
+        <a href="https://github.com/ShaiviSri04" target="_blank" class="text-gray-800 hover:text-gray-600 transition">
           <i class="fab fa-github"></i>
         </a>
       </div>
