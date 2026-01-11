@@ -37,8 +37,7 @@
 <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-2 gap-10">
 
 <!-- LEFT -->
-<div class="col-span-3 grid grid-cols-2 gap-6 auto-rows-fr">
-
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
 <div class="bg-white p-6 rounded-xl shadow">
   <h2 class="text-lg font-bold text-blue-700 mb-2">What this system does</h2>
@@ -74,46 +73,46 @@
 
 <h2 class="text-xl font-bold text-blue-700">Evaluate Applicant</h2>
 
-<form method="POST" action="/" class="space-y-3">
+<form method="POST" action="/" class="space-y-4">
 
-<div class="space-y-1">
+  <div class="space-y-1">
+    <label class="text-sm">Monthly Income (₹)</label>
+    <input name="NETMONTHLYINCOME" class="w-full p-2 border rounded">
+  </div>
 
-<label class="text-sm">Monthly Income (₹)</label>
-<input name="NETMONTHLYINCOME" class="w-full p-2 border rounded">
-</div class="space-y-1>
+  <div class="space-y-1">
+    <label class="text-sm">Max Delinquency (days)</label>
+    <input name="max_recent_level_of_deliq" class="w-full p-2 border rounded">
+  </div>
 
-<div class="space-y-1>
-<label class="text-sm">Max Delinquency (days)</label>
-<input name="max_recent_level_of_deliq" class="w-full p-2 border rounded">
-</div class="space-y-1>
+  <div class="space-y-1">
+    <label class="text-sm">Credit History (months)</label>
+    <input name="Age_Oldest_TL" class="w-full p-2 border rounded">
+  </div>
 
-<div class="space-y-1>
-<label class="text-sm">Credit History (months)</label>
-<input name="Age_Oldest_TL" class="w-full p-2 border rounded">
-</div class="space-y-1>
+  <div class="space-y-1">
+    <label class="text-sm">Loan Enquiries (last 3 months)</label>
+    <input name="enq_L3m" class="w-full p-2 border rounded">
+  </div>
 
-<div class="space-y-1>
-<label class="text-sm">Loan Enquiries (last 3 months)</label>
-<input name="enq_L3m" class="w-full p-2 border rounded">
-</div class="space-y-1>
+  <div class="space-y-1">
+    <label class="text-sm">Education</label>
+    <select name="EDUCATION" class="w-full p-2 border rounded">
+      <option value="">Select education level</option>
+      <option value="SSC">SSC</option>
+      <option value="UNDER GRADUATE">Under Graduate</option>
+      <option value="GRADUATE">Graduate</option>
+      <option value="POST-GRADUATE">Post Graduate</option>
+      <option value="OTHERS">Others</option>
+    </select>
+  </div>
 
-<div class="space-y-1>
-<label class="text-sm">Education</label>
-<select name="EDUCATION" class="w-full p-2 border rounded">
-<option value="">Select education level</option>
-<option value="SSC">SSC</option>
-<option value="UNDER GRADUATE">Under Graduate</option>
-<option value="GRADUATE">Graduate</option>
-<option value="POST-GRADUATE">Post Graduate</option>
-<option value="OTHERS">Others</option>
-</select>
-</div class="space-y-1>
-
-<button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded font-semibold">
-Evaluate Risk
-</button>
+  <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded font-semibold">
+    Evaluate Risk
+  </button>
 
 </form>
+
 
 {% if pd is not none %}
 <div class="bg-slate-50 border border-blue-200 p-3 rounded space-y-1">
@@ -289,12 +288,5 @@ Evaluate Risk
 
   </div>
 </section>
-
-      </div>
-    </div>
-
-  </div>
-</section>
-
 </body>
 </html>
