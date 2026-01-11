@@ -7,57 +7,69 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
-<body class="bg-slate-100">
+<body class="bg-slate-100 pt-24">
 
-<!-- HERO -->
-<header class="bg-white shadow-sm py-6">
-  <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-    <div>
-      <h1 class="text-3xl font-bold text-blue-700">Credit Risk Decision Engine</h1>
-      <p class="text-gray-600">AI-powered loan risk scoring platform</p>
+<!-- ================= NAVBAR ================= -->
+<nav class="bg-white shadow-sm fixed top-0 w-full z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <h1 class="text-xl font-bold text-blue-700">Credit Risk Engine</h1>
+
+    <div class="space-x-6 text-sm font-medium text-gray-700">
+      <a href="#tool" class="hover:text-blue-600">Risk Tool</a>
+      <a href="#about" class="hover:text-blue-600">Model</a>
+      <a href="#metrics" class="hover:text-blue-600">Performance</a>
+      <a href="#contact" class="hover:text-blue-600">Contact</a>
     </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="bg-white shadow-sm py-8">
+  <div class="max-w-7xl mx-auto px-6">
+    <h1 class="text-3xl font-bold text-blue-700">Credit Risk Decision Engine</h1>
+    <p class="text-gray-600 mt-2">
+      AI-powered loan default prediction system built using XGBoost
+    </p>
   </div>
 </header>
 
-<!-- MAIN -->
-<div class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-2 gap-8">
+<!-- ================= MAIN ================= -->
+<a id="tool"></a>
+<div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-2 gap-10">
 
-<!-- LEFT PANEL -->
+<!-- LEFT -->
 <div class="space-y-6">
 
 <div class="bg-white p-6 rounded-xl shadow">
   <h2 class="text-lg font-bold text-blue-700 mb-2">What this system does</h2>
   <p class="text-gray-700">
     This platform predicts the <b>Probability of Default (PD)</b> for loan applicants using
-    <b>XGBoost</b>, a high-performance machine learning model trained on real financial data.
+    <b>XGBoost</b>, a powerful machine learning algorithm used by modern banks and fintech companies.
   </p>
 </div>
 
 <div class="bg-white p-6 rounded-xl shadow">
   <h2 class="text-lg font-bold text-blue-700 mb-2">Risk Interpretation</h2>
-  <p class="text-gray-700">
-    Applicants are grouped into <b>Low</b>, <b>Medium</b> or <b>High</b> risk based on PD.
-  </p>
-  <ul class="mt-3 text-sm text-gray-600 list-disc list-inside">
-    <li>Low Risk → Approve</li>
-    <li>Medium Risk → Manual Review</li>
-    <li>High Risk → Reject</li>
+  <ul class="text-gray-700 text-sm list-disc list-inside space-y-1">
+    <li><b>Low Risk</b> → Automatic Approval</li>
+    <li><b>Medium Risk</b> → Manual Credit Review</li>
+    <li><b>High Risk</b> → Loan Rejection</li>
   </ul>
 </div>
 
 <div class="bg-white p-6 rounded-xl shadow">
   <h2 class="text-lg font-bold text-blue-700 mb-2">Why this model is strong</h2>
   <ul class="text-gray-700 text-sm list-disc list-inside space-y-1">
-    <li>XGBoost trained on real banking attributes</li>
-    <li>Evaluated using ROC-AUC, PR-AUC, KS metrics</li>
-    <li>Designed for imbalanced credit risk data</li>
-    <li>Business-aligned risk banding</li>
+    <li>Built using XGBoost (industry-standard credit ML)</li>
+    <li>Optimized for highly imbalanced default data</li>
+    <li>Evaluated using ROC-AUC, PR-AUC and KS</li>
+    <li>Designed for real bank underwriting flows</li>
   </ul>
 </div>
 
 </div>
 
-<!-- RIGHT PANEL -->
+<!-- RIGHT -->
 <div class="bg-white p-8 rounded-xl shadow space-y-6">
 
 <h2 class="text-xl font-bold text-blue-700">Evaluate Applicant</h2>
@@ -111,31 +123,157 @@ Evaluate Risk
 {% endif %}
 
 </div>
-
 </div>
 
-<!-- FOOTER -->
-<footer class="bg-white border-t py-6 mt-10">
-<div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-  <span class="text-sm text-gray-600">© 2026 Shaivi Srivastava</span>
-  <div class="space-x-4 text-xl">
-    <a href="https://www.linkedin.com/in/shaivisri04/"
-     target="_blank"
-     rel="noopener noreferrer"
-     class="text-blue-600 text-xl hover:text-blue-800">
-     <i class="fab fa-linkedin"></i>
-    </a>
+<!-- ================= MODEL ================= -->
+<a id="about"></a>
+<section class="max-w-7xl mx-auto px-6 py-14">
+  <div class="grid md:grid-cols-2 gap-10">
 
-    <a href="https://github.com/YOUR_GITHUB"
-     target="_blank"
-     rel="noopener noreferrer"
-     class="text-gray-800 text-xl hover:text-black">
-     <i class="fab fa-github"></i>
-    </a>
+    <div class="bg-white p-8 rounded-xl shadow">
+      <h2 class="text-2xl font-bold text-blue-700 mb-4">
+        How the Risk Engine Works
+      </h2>
+
+      <p class="text-gray-700 mb-4">
+        This platform predicts the <b>Probability of Default (PD)</b>, which represents the likelihood
+        that a borrower will fail to repay a loan. The lower the PD, the safer the applicant.
+      </p>
+
+      <p class="text-gray-700 mb-4">
+        The engine uses <b>XGBoost</b>, a powerful gradient boosting model widely used in
+        banking, fintech, and credit scoring systems due to its ability to model complex
+        non-linear risk patterns.
+      </p>
+
+      <p class="text-gray-700">
+        Instead of simple rule-based credit checks, the model evaluates dozens of financial,
+        behavioural and credit-history signals to produce a statistically optimized risk score.
+      </p>
+    </div>
+
+    <div class="bg-white p-8 rounded-xl shadow">
+      <h2 class="text-2xl font-bold text-blue-700 mb-4">
+        Risk Bands & Business Decisions
+      </h2>
+
+      <ul class="space-y-3 text-gray-700">
+        <li>
+          <b>Low Risk</b> — Borrowers with low PD.  
+          These customers are safe and can be automatically approved.
+        </li>
+        <li>
+          <b>Medium Risk</b> — Moderate PD.  
+          These cases are routed for manual review by credit officers.
+        </li>
+        <li>
+          <b>High Risk</b> — High PD.  
+          These borrowers have a high chance of default and are automatically rejected.
+        </li>
+      </ul>
+
+      <div class="mt-4 bg-blue-50 p-4 rounded">
+        <p class="text-sm text-blue-700 font-semibold">
+          This risk-based automation mirrors how modern banks and NBFCs make lending decisions.
+        </p>
+      </div>
+    </div>
 
   </div>
-</div>
-</footer>
+</section>
+
+
+<!-- ================= PERFORMANCE ================= -->
+<a id="metrics"></a>
+<section class="bg-slate-50 py-16">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+
+    <h2 class="text-3xl font-bold text-blue-700 mb-4">
+      Model Performance
+    </h2>
+
+    <p class="text-gray-600 max-w-3xl mx-auto mb-10">
+      The XGBoost credit model was evaluated on unseen customers using
+      industry-standard credit-risk metrics to ensure real-world reliability.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <div class="bg-white p-8 rounded-xl shadow">
+        <p class="text-sm text-gray-500">ROC-AUC</p>
+        <p class="text-4xl font-bold text-blue-700">0.94</p>
+        <p class="text-sm text-gray-600 mt-3">
+          Measures how well the model separates defaulters from non-defaulters.
+          Values above 0.90 are considered excellent in credit scoring.
+        </p>
+      </div>
+
+      <div class="bg-white p-8 rounded-xl shadow">
+        <p class="text-sm text-gray-500">PR-AUC</p>
+        <p class="text-4xl font-bold text-green-600">0.83</p>
+        <p class="text-sm text-gray-600 mt-3">
+          Indicates how accurately high-risk borrowers are detected in highly imbalanced datasets
+          where defaults are rare.
+        </p>
+      </div>
+
+      <div class="bg-white p-8 rounded-xl shadow">
+        <p class="text-sm text-gray-500">KS Statistic</p>
+        <p class="text-4xl font-bold text-purple-600">0.81</p>
+        <p class="text-sm text-gray-600 mt-3">
+          A core banking risk metric. Scores above 0.60 are strong — this model achieves elite-level
+          separation power.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+<a id="contact"></a>
+<section class="bg-blue-700 py-16 text-white">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+
+    <div>
+      <h2 class="text-3xl font-bold mb-4">About the Project</h2>
+      <p class="text-blue-100 mb-4">
+        This Credit Risk Decision Engine is a full-stack machine learning application that
+        combines data engineering, predictive modeling and automated underwriting into
+        a real-world fintech system.
+      </p>
+      <p class="text-blue-100">
+        It demonstrates how modern banks evaluate customer risk using AI instead of
+        traditional rule-based credit scoring.
+      </p>
+    </div>
+
+    <div class="bg-white text-gray-800 p-8 rounded-xl shadow">
+      <h3 class="text-xl font-bold mb-4">Contact</h3>
+
+      <p class="mb-2"><b>Name:</b> Shaivi Srivastava</p>
+      <p class="mb-2"><b>Email:</b> shaivisri04@gmail.com</p>
+
+      <div class="flex space-x-6 mt-4 text-xl">
+        <a href="https://www.linkedin.com/in/shaivisri04/" target="_blank" class="text-blue-600">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/ShaiviSri04" target="_blank" class="text-gray-800">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+      </div>
+    </div>
+
+  </div>
+</section>
 
 </body>
 </html>
