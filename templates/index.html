@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Credit Risk Decision Engine</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body class="bg-slate-100">
+
+<!-- HERO -->
+<header class="bg-white shadow-sm py-6">
+  <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+    <div>
+      <h1 class="text-3xl font-bold text-blue-700">Credit Risk Decision Engine</h1>
+      <p class="text-gray-600">AI-powered loan risk scoring platform</p>
+    </div>
+  </div>
+</header>
+
+<!-- MAIN -->
+<div class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-2 gap-8">
+
+<!-- LEFT PANEL -->
+<div class="space-y-6">
+
+<div class="bg-white p-6 rounded-xl shadow">
+  <h2 class="text-lg font-bold text-blue-700 mb-2">What this system does</h2>
+  <p class="text-gray-700">
+    This platform predicts the <b>Probability of Default (PD)</b> for loan applicants using
+    <b>XGBoost</b>, a high-performance machine learning model trained on real financial data.
+  </p>
+</div>
+
+<div class="bg-white p-6 rounded-xl shadow">
+  <h2 class="text-lg font-bold text-blue-700 mb-2">Risk Interpretation</h2>
+  <p class="text-gray-700">
+    Applicants are grouped into <b>Low</b>, <b>Medium</b> or <b>High</b> risk based on PD.
+  </p>
+  <ul class="mt-3 text-sm text-gray-600 list-disc list-inside">
+    <li>Low Risk → Approve</li>
+    <li>Medium Risk → Manual Review</li>
+    <li>High Risk → Reject</li>
+  </ul>
+</div>
+
+<div class="bg-white p-6 rounded-xl shadow">
+  <h2 class="text-lg font-bold text-blue-700 mb-2">Why this model is strong</h2>
+  <ul class="text-gray-700 text-sm list-disc list-inside space-y-1">
+    <li>XGBoost trained on real banking attributes</li>
+    <li>Evaluated using ROC-AUC, PR-AUC, KS metrics</li>
+    <li>Designed for imbalanced credit risk data</li>
+    <li>Business-aligned risk banding</li>
+  </ul>
+</div>
+
+</div>
+
+<!-- RIGHT PANEL -->
+<div class="bg-white p-8 rounded-xl shadow space-y-6">
+
+<h2 class="text-xl font-bold text-blue-700">Evaluate Applicant</h2>
+
+<form method="POST" action="/" class="space-y-4">
+
+<div>
+<label class="text-sm">Monthly Income (₹)</label>
+<input name="NETMONTHLYINCOME" class="w-full p-2 border rounded">
+</div>
+
+<div>
+<label class="text-sm">Max Delinquency (days)</label>
+<input name="max_recent_level_of_deliq" class="w-full p-2 border rounded">
+</div>
+
+<div>
+<label class="text-sm">Credit History (months)</label>
+<input name="Age_Oldest_TL" class="w-full p-2 border rounded">
+</div>
+
+<div>
+<label class="text-sm">Loan Enquiries (last 3 months)</label>
+<input name="enq_L3m" class="w-full p-2 border rounded">
+</div>
+
+<div>
+<label class="text-sm">Education</label>
+<select name="EDUCATION" class="w-full p-2 border rounded">
+<option value="">Select education level</option>
+<option value="SSC">SSC</option>
+<option value="UNDER GRADUATE">Under Graduate</option>
+<option value="GRADUATE">Graduate</option>
+<option value="POST-GRADUATE">Post Graduate</option>
+<option value="OTHERS">Others</option>
+</select>
+</div>
+
+<button class="w-full bg-blue-600 hover:bg-blue-700 text-white p-3 rounded font-semibold">
+Evaluate Risk
+</button>
+
+</form>
+
+{% if pd is not none %}
+<div class="bg-slate-50 border border-blue-200 p-4 rounded space-y-2">
+  <p><b>PD:</b> {{pd}}</p>
+  <p><b>Risk Band:</b> {{band}}</p>
+  <p><b>Decision:</b> {{decision}}</p>
+</div>
+{% endif %}
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-white border-t py-6 mt-10">
+<div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+  <span class="text-sm text-gray-600">© 2026 Shaivi Srivastava</span>
+  <div class="space-x-4 text-xl">
+    <a href="https://www.linkedin.com/in/shaivisri04/" class="text-blue-600"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/ShaiviSri04" class="text-gray-800"><i class="fab fa-github"></i></a>
+  </div>
+</div>
+</footer>
+
+</body>
+</html>
