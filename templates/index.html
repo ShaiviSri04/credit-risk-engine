@@ -38,7 +38,7 @@
   </div>
 </nav>
 
-<div id="mobileMenu" class="hidden sm:hidden bg-white shadow-md">
+<div id="mobileMenu" class="hidden sm:hidden fixed top-16 left-0 w-full bg-white shadow-md z-50">
   <div class="flex flex-col px-6 py-4 space-y-4 text-gray-700 font-medium">
     <a href="#tool" class="hover:text-blue-600">Risk Tool</a>
     <a href="#about" class="hover:text-blue-600">Model</a>
@@ -100,12 +100,12 @@
 </div>
 
 <!-- RIGHT -->
-<div class="bg-white p-5 rounded-xl shadow space-y-3 lg:sticky lg:top-24 h-fit">
+<div id="riskForm" class="bg-white p-5 rounded-xl shadow space-y-3 lg:sticky lg:top-24 h-fit">
 
 
 <h2 class="text-xl font-bold text-blue-700">Evaluate Applicant</h2>
 
-<form method="POST" action="/#tool" class="space-y-4">
+<form method="POST" action="/#riskForm" class="space-y-4">
 
   <div class="space-y-1">
     <label class="text-sm">Monthly Income (₹)</label>
