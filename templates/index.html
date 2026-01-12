@@ -10,15 +10,6 @@
   .gradient-bg { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); }
 </style>
 
-<script>
-  const btn = document.getElementById("menuBtn");
-  const menu = document.getElementById("mobileMenu");
-
-  btn.addEventListener("click", () => {
-    menu.classList.toggle("hidden");
-  });
-</script>
-
 </head>
 
 <body class="bg-slate-100 pt-20 text-sm sm:text-base overflow-x-hidden">
@@ -328,5 +319,13 @@
 
   </div>
 </section>
+<script>
+  const btn = document.getElementById("menuBtn");
+  const menu = document.getElementById("mobileMenu");
+
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+</script>
 </body>
 </html>
